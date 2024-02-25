@@ -1,5 +1,6 @@
 package com.ms;
 
+import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
@@ -13,8 +14,11 @@ import lombok.NoArgsConstructor;
 public class Employee {
 	private int code;
 	private String name;
-	private Address address;
+	//private List<Address> addresses;
+	private Map<String,Address> addresses;
 	private Set<String> emails;
 	//private Map<String,String> phones;
 	private Properties phones;
+	private String authorName;
+	private String authorEmail;
 }

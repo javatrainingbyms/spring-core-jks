@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+	<bean id="adr1" class="com.ms.Address">
+		<property name="hno" value="444" />
+		<property name="street" value="xyz-street" />
+		<property name="city" value="indore" />
+	</bean>
+	<bean id="adr2" class="com.ms.Address">
+	<property name="hno" value="555" />
+		<property name="street" value="pqr-street" />
+		<property name="city" value="delhi" />
+	</bean>
+
+</beans>
+

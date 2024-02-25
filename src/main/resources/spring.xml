@@ -6,12 +6,38 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
-    http://www.springframework.org/schema/context/spring-context.xsd">
+    http://www.springframework.org/schema/context/spring-context.xsd"
+    default-init-method="start"
+    default-lazy-init="true">
+    
+	<import resource="addresses.xml"/>
+	<bean id="author">
+		<property name="authorName" value="manoj"/>
+		<property name="authorEmail" value="manoj@gmail.com"/>
+	</bean>
+	
+	<bean id="con" class="com.ms.DBConnection" scope="singleton" parent="author">
+		<property name="dbUrl" value="con-url"/>
+		<property name="dbUid" value="con-user"/>
+		<property name="dbPassword" value="con-password"/>
+	</bean>
 
+	<bean id="emp" class="com.ms.Employee" parent="author">
+		
+	</bean>
 	<bean id="e1" class="com.ms.Employee">
 		<constructor-arg value="1010" />
 		<constructor-arg value="manish" />
-		<constructor-arg ref="adr1" />
+		<constructor-arg>
+			<map>
+				<entry key="residential" value-ref="adr1"/>
+				<entry key="office" value-ref="adr2"/>
+			</map>
+			<!-- <list>
+				<ref bean="adr1" />
+				<ref bean="adr2" />
+			</list> -->
+		</constructor-arg>
 		<constructor-arg>
 			<set>
 				<value>abc@gmail.com</value>
@@ -34,13 +60,7 @@
 			/> <property name="address" ref="adr1" /> <property name="emails"> <list> 
 			<value>abc@gmail.com</value> <value>abc@yahoo.com</value> </list> </property> -->
 	</bean>
-	<bean id="adr1" class="com.ms.Address">
-		<property name="hno" value="444" />
-		<property name="street" value="xyz-street" />
-		<property name="city" value="indore" />
-	</bean>
-	<bean id="adr2" class="com.ms.Address">
-	</bean>
+	
 
 </beans>
 
