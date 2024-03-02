@@ -11,6 +11,11 @@
     default-lazy-init="true">
     
 	<import resource="addresses.xml"/>
+	
+	<bean id="infoFactory" class="com.ms.InfoFactory"/>
+	
+	<bean id="info" class="com.ms.InfoFactory" factory-method="getInfo" factory-bean="infoFactory"/>
+	
 	<bean id="author">
 		<property name="authorName" value="manoj"/>
 		<property name="authorEmail" value="manoj@gmail.com"/>

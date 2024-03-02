@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="emp" class="com.ms.Emp">
+		<property name="code" value="501" />
+		<property name="name" value="demo-name" />
+	</bean>
+	<bean id="company" class="com.ms.Company">
+		<property name="name" value="Xyz Solutions" />
+		<property name="business" value="IT" />
+	</bean>
+	<bean id="address" class="com.ms.Address">
+		<property name="hno" value="444" />
+		<property name="street" value="xyz-street" />
+		<property name="city" value="indore" />
+	</bean>
+</beans>
+
